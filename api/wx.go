@@ -23,6 +23,9 @@ func Wx(rw http.ResponseWriter, req *http.Request) {
 	}
 	officialAccount := wc.GetOfficialAccount(cfg)
 
+	fmt.Println("get access token")
+	fmt.Println(officialAccount.GetAccessToken())
+
 	// 传入request和responseWriter
 	server := officialAccount.GetServer(req, rw)
 	server.SkipValidate(true)
